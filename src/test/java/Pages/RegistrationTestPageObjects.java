@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationTestPageObjects {
-    private SelenideElement
+    private final SelenideElement
             nameInput = $("#name"),
             surnameInput = $("#surname"),
             emailInput = $("#email"),
