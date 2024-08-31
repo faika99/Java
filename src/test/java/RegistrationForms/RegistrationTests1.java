@@ -1,4 +1,4 @@
-import RegistrationForms.RegistrationTestPageObjects;
+import Pages.RegistrationTestPageObjects;
 
 import org.junit.jupiter.api.Test;
 
