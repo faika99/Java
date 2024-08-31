@@ -1,26 +1,25 @@
-import com.codeborne.selenide.Configuration;
+import RegistrationForms.RegistrationTestPageObjects;
+
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
 public class RegistrationTests1 {
+    RegistrationTestPageObjects registrationTestPageObjects = new RegistrationTestPageObjects();
     @Test
     void sucsessfulRegistrationTests1() {
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "1920x1080";
+        String name = "Alexandr";
+        String surname = "Pushkin";
+        String email = "stihi@example.com";
+        String password = "123qwe..";
+        String confirm_password = "123qwe..";
 
-        open("https://lm.skillbox.cc/qa_tester/module05/practice2/");
-
-        $("#name").setValue("Alexandr");
-        $("#surname").setValue("Pushkin");
-        $("#email").setValue("stihi@example.com");
-        $("#password").setValue("123qwe..");
-        $("#confirm_password").setValue("123qwe..");
-        $(".form-label-agree").click();
-        $(".form-submit").click();
-
-        $(".form-wrapper").shouldHave(text("спасибо за регистрацию!"));
+        registrationTestPageObjects.openPage()
+                .setName(name)
+                .setSurname(surname)
+                .setEmail(email)
+                .setPassword(password)
+                .setCofirmPassword(confirm_password)
+                .setAgreeCheckbox()
+                .SubmitButton()
+                .sucsessfulRegistration("спасибо за регистрацию!");
     }
 }
