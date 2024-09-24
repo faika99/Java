@@ -117,7 +117,7 @@ public class FormPageObjects {
     }
 
     public FormPageObjects dragAndDrop() {
-        actions().moveToElement($("#draggable")).dragAndDropBy($("#draggable"),140, 32).perform();;
+        actions().moveToElement($("#draggable")).dragAndDropBy($("#draggable"),140, 32).perform();
         $("div#droppable p").shouldHave(text("Dropped!"));
 
         return this;
